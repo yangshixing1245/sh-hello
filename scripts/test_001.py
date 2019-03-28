@@ -22,6 +22,7 @@ class Test_Severity:
         assert True
 
     @allure.step (title="TRIVIAL")
-    @pytest.allure.severity (pytest.allure.severity_level.TRIVIAL)
     def test_005(self):
-        assert False
+        with open("./png/2019-03-18_210641.png","rb") as f:
+            allure.attach("图片描述",f.read(),allure.attach_type.PNG)
+        assert True
